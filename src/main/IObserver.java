@@ -1,5 +1,5 @@
 package main;
 
-public interface IObserver {
-    public void update(WeatherData data);
+public interface IObserver<TData> {
+    public void update(TData data);
 }

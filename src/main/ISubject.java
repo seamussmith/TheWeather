@@ -1,7 +1,7 @@
 package main;
 
-public interface ISubject {
-    public void registerObserver(IObserver o);
-    public void removeObserver(IObserver o);
+public interface ISubject<TData> {
+    public void registerObserver(IObserver<TData> o);
+    public void removeObserver(IObserver<TData> o);
     public void notifyObservers();
 }
