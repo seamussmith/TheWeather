@@ -6,11 +6,11 @@ public class WeatherStation implements ISubject<WeatherData> {
 
     private ArrayList<IObserver<WeatherData>> observers = new ArrayList<>();
     private WeatherData weatherData;
-    public WeatherData weatherData()
+    public WeatherData getWeatherData()
     {
         return weatherData;
     }
-    public void weatherData(WeatherData newData)
+    public void setWeatherData(WeatherData newData)
     {
         weatherData = newData;
         notifyObservers();
