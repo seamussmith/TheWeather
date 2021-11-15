@@ -1,15 +1,18 @@
 package main;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class WeatherStation implements ISubject<WeatherData> {
 
-    private ArrayList<IObserver<WeatherData>> observers;
-    private WeatherData currentData;
-    private void setWeatherData(WeatherData newData)
+    private ArrayList<IObserver<WeatherData>> observers = new ArrayList<>();
+    private WeatherData weatherData;
+    public WeatherData weatherData()
     {
-        currentData = newData;
+        return weatherData;
+    }
+    public void weatherData(WeatherData newData)
+    {
+        weatherData = newData;
         notifyObservers();
     }
     @Override
@@ -24,7 +27,7 @@ public class WeatherStation implements ISubject<WeatherData> {
 
     @Override
     public void notifyObservers() {
-        observers.forEach(x -> x.update(currentData));
+        observers.forEach(x -> x.update(weatherData));
     }
     
 }
